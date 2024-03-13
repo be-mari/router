@@ -5,5 +5,7 @@
 body {
   margin: 0;
 }
-@import "./components/layout.scss";
+@import "./components/grid.scss";
 @import "./components/header.scss";
+@import "./components/layout.scss";
+@import "./components/nav.scss";

@@ -1,23 +1,27 @@
 import Layout from "./components/layout";
-import Header from "./components/header";
 import { Route, Routes } from "react-router-dom";
+import About from "./pages/about";
+import Contact from "./pages/contact";
 import Home from "./pages/home";
+import NoMatch from "./pages/no-match";
 
 const App = () => {
   return (
     <>
-      <Layout>
-        <h1>Nešto</h1>
-        <Routes>
-          <Route path="/" element={<Layout />}>
-            <Route index element={<Home />} />
-            <Route path="about" element={<About />} />
-            <Route path="dashboard" element={<Dashboard />} />
-            <Route path="*" element={<NoMatch />} />
+      <Routes>
+        <Route path="/" element={<Layout />}>
+          <Route index element={<Home />} />
+          <Route path="about" element={<About />}>
+            <Route path="history" element={"History"} />
           </Route>
-        </Routes>
-      </Layout>
-      <Header />
+          <Route path="contact" element={<Contact />} />
+
+          {/* Using path="*"" means "match anything", so this route
+                acts like a catch-all for URLs that we don't have explicit
+                routes for. */}
+          <Route path="*" element={<NoMatch />} />
+        </Route>
+      </Routes>
     </>
   );
 };
