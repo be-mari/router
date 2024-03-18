@@ -1,8 +1,8 @@
-import { MouseEvent, useEffect, useState } from "react";
+import { useState, useEffect, MouseEvent } from "react";
 import { Outlet } from "react-router-dom";
 import Select from "react-select";
 
-type PokemonResponseType = {
+type PokemonsResponseType = {
   count: number;
   next: string;
   results: PokemonType[];
@@ -14,12 +14,13 @@ type PokemonType = {
 };
 
 type ActivePokemonType = {
-  aprites: {
+  sprites: {
     front_default: string;
   };
 };
+type ActivePokemonResponseType = ActivePokemonType;
 
-//items per page
+//ItemPerPage
 type OptionType = {
   value: string;
   label: string;
@@ -35,32 +36,20 @@ const defaultLimit = "10";
 
 const About = () => {
   const [data, setData] = useState<PokemonType[]>([]);
-  const [limit, setLimit] = useState<number>(10);
-  const [activePokemon, setActivePokemon] = useState<>;
+  const [limit, setLimit] = useState<string | undefined>("10");
+
+  const [activePokemon, setActivePokemon] = useState<
+    ActivePokemonType | undefined
+  >(undefined);
 
   const getData = async (limit: string | undefined) => {
     await fetch(
-      `https://pokeapi.co/api/v2/pokemon/?limit =${
-        limit ? limit : defaultLimit
-      }`
+      `https://pokeapi.co/api/v2/pokemon/?limit=${limit ? limit : defaultLimit}`
     )
       .then((data) => {
         return data.json();
       })
-      .then((res: PokemonResponseType) => {
-        setData(res.results);
-      })
-      .catch((err) => {
-        console.log(err);
-      });
-  };
-
-  const getPokemonData = async () => {
-    await fetch(`https://pokeapi.co/api/v2/pokemon/graveler`)
-      .then((data) => {
-        return data.json();
-      })
-      .then((res: PokemonResponseType) => {
+      .then((res: PokemonsResponseType) => {
         setData(res.results);
       })
       .catch((err) => {
@@ -69,34 +58,34 @@ const About = () => {
   };
 
   const getPokemonData = async (pokemon: string) => {
-    await fetch(`https://pokeapi.co/api/v2/item/{id or name}/`)
+    await fetch(`https://pokeapi.co/api/v2/pokemon/${pokemon}`)
       .then((data) => {
         return data.json();
       })
-      .then((res: PokemonResponseType) => {
-        setData(res.results);
+      .then((res: ActivePokemonType) => {
+        setActivePokemon(res);
       })
       .catch((err) => {
         console.log(err);
       });
   };
 
-  getData(defaultLimit);
-
   useEffect(() => {
-    getData(defaultLimit);
-  }, []); // okida se kad se doda nešto u zagrade - ako stavimo setData i Data, imamo infinite loop
+    getData(limit);
+  }, [limit]);
 
   return (
     <>
-      <div>
-        <h2> About</h2>
+      <div>I'm About</div>
+      <div style={{ display: "flex", justifyContent: "center" }}>
+        <div style={{ width: 20, height: 20, backgroundColor: "red" }}></div>
       </div>
       <div>
         <h1>Pokemon</h1>
         <Select
           onChange={(e) => {
-            getData(e?.value);
+            //getData(e?.value);
+            setLimit(e?.value);
           }}
           options={options}
         />
@@ -104,11 +93,9 @@ const About = () => {
           {data.map((pokemon) => {
             return (
               <button
-                onClick={(e: MouseEvent<HTMLButtonElement>) => {
-                  const element = e.target as HTMLButtonElement;
-                  const currentPokemon = element.innerHTML;
-                  console.log(element.innerText);
-                  getPokemonData();
+                onClick={(e) => {
+                  const test = e.target as HTMLButtonElement;
+                  getPokemonData(test.innerHTML);
                 }}
                 key={pokemon.name}
               >
@@ -116,6 +103,9 @@ const About = () => {
               </button>
             );
           })}
+        </div>
+        <div>
+          <img src={activePokemon?.sprites.front_default} alt="" />
         </div>
       </div>
       <Outlet />
