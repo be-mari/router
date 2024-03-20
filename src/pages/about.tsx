@@ -1,4 +1,4 @@
-import { useState, useEffect, MouseEvent } from "react";
+import { useState, useEffect } from "react";
 import { Outlet } from "react-router-dom";
 import Select from "react-select";
 
@@ -18,7 +18,8 @@ type ActivePokemonType = {
     front_default: string;
   };
 };
-type ActivePokemonResponseType = ActivePokemonType;
+
+// type ActivePokemonResponseType = ActivePokemonType;
 
 //ItemPerPage
 type OptionType = {
@@ -37,7 +38,6 @@ const defaultLimit = "10";
 const About = () => {
   const [data, setData] = useState<PokemonType[]>([]);
   const [limit, setLimit] = useState<string | undefined>("10");
-
   const [activePokemon, setActivePokemon] = useState<
     ActivePokemonType | undefined
   >(undefined);
