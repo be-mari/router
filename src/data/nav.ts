@@ -13,4 +13,16 @@ export const navigationData: LinkType[] = [
     href: "/contact",
     label: "Contact",
   },
+  {
+    href: "/mewtwo",
+    label: "Mewtwo",
+  },
+  {
+    href: "/country",
+    label: "Country",
+  },
+  {
+    href: "/cookies",
+    label: "Cookies",
+  },
 ];
