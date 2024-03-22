@@ -22,7 +22,7 @@ export const navigationData: LinkType[] = [
     label: "Country",
   },
   {
-    href: "/cookies",
-    label: "Cookies",
+    href: "/profile",
+    label: "Profile",
   },
 ];

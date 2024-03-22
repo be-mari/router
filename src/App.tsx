@@ -4,9 +4,9 @@ import About from "./pages/about";
 import Home from "./pages/home";
 import NoMatch from "./pages/no-match";
 import Mewtwo from "./pages/mewtwo";
-import Cookies from "./pages/cookies";
 import Country from "./pages/country";
 import Flags from "./pages/flags";
+import Profile from "./pages/profile";
 
 const App = () => {
   return (
@@ -20,7 +20,7 @@ const App = () => {
           <Route path="mewtwo" element={<Mewtwo />} />
           <Route path="country" element={<Country />} />
           <Route path="flags" element={<Flags />} />
-          <Route path="cookies" element={<Cookies />} />
+          <Route path="profile" element={<Profile />} />
 
           {/* Using path="*"" means "match anything", so this route
                 acts like a catch-all for URLs that we don't have explicit
