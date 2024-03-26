@@ -12,7 +12,7 @@ const Homework = () => {
   const [inputValue, setInputValue] = useState<string>("");
 
   //// Number
-  const [myNumber, setMyNumber] = useState<number>();
+  const [myNumber, setMyNumber] = useState<number>(0);
 
   ///// Number Array
   const [myNumberArr, setMyNumberArr] = useState<number[]>([1, 2, 3]);
