@@ -15,20 +15,20 @@ const Profile = () => {
 
   return (
     <>
-      <h1>Profile</h1>
+      <h1 className="profile__h1">Profile</h1>
       <div>
         <div className="profile">
           <div className="profile__card">
             <img
-              className="img"
-              src="https://img.freepik.com/free-psd/3d-illustration-human-avatar-profile_23-2150671130.jpg?t=st=1711132466~exp=1711136066~hmac=0f58936c2049d5fb5f13e87b4f5ac60b1dcfe0e51f1264fc99ae756e7a5c3986&w=826"
+              className="profile__img"
+              src="https://img.freepik.com/free-photo/androgynous-avatar-non-binary-queer-person_23-2151100234.jpg?t=st=1711150045~exp=1711153645~hmac=28f3f1a96e3ec2ec2faf79d7f23192563b104eaf5c28adfe6154b095c1965bda&w=360"
               alt="avatar"
             />
 
             <div className="profile__card__name">{name}</div>
             <div className="profile__tags">
               {tags.map((tag: string, index: number) => (
-                <div className="tag" key={index}>
+                <div className="profile__tag" key={index}>
                   {tag}
                 </div>
               ))}
@@ -36,8 +36,9 @@ const Profile = () => {
           </div>
 
           <div className="profile__form">
-            <label>Name</label>
+            <label className="profile__label">Name</label>
             <input
+              className="profile__inpt"
               type="text"
               placeholder="Marija"
               value={name}
@@ -45,9 +46,10 @@ const Profile = () => {
             />
 
             <div className="tags">
-              <label>Tags</label>
+              <label className="profile__label">Tags</label>
               <div>
                 <input
+                  className="profile__inpt"
                   type="text"
                   value={inputValue}
                   onChange={(e) => setInputValue(e.target.value)}

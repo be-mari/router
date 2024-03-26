@@ -25,4 +25,8 @@ export const navigationData: LinkType[] = [
     href: "/profile",
     label: "Profile",
   },
+  {
+    href: "/homework",
+    label: "Homework",
+  },
 ];

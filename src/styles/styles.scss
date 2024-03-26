@@ -1,6 +1,28 @@
+:root {
+  //border
+  --border-rounded: 0.5rem;
+  --border-circle: 1000rem;
+
+  //colors
+  --color-white: #fff;
+  --color-gray-100: #ecf0f1;
+  --color-gray-200: #bdc3c7;
+  --color-gray-300: #95a5a6;
+  --color-gray-400: #7f8c8d;
+  --color-black: #222;
+  --color-blue-100: #d6dff0;
+  --color-blue-400: #5172b1;
+  --color-green-400: #54c183;
+  --color-red-300: #db3f52;
+  --color-red-400: #c23d50;
+  --color-red-800: #521a22;
+  --color-yellow-400: #f3ef19;
+  --color-orange-300: #e7b128;
+}
+
 * {
   box-sizing: border-box;
-  font-family: "Laila", serif;
+  font-family: "Lobster Two", sans-serif;
 }
 
 body {
@@ -10,6 +32,7 @@ body {
 @import "./components/header.scss";
 @import "./components/layout.scss";
 @import "./components/nav.scss";
-@import "./components/profile.scss";
 @import "./pages/country.scss";
 @import "./pages/flags.scss";
+@import "./pages/profile.scss";
+@import "./pages/homework.scss";
