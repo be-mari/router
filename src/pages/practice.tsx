@@ -62,7 +62,7 @@ const Practice = () => {
       <div>{name ? name : "Trenutno ime ne postoji. Molimo dodajte ime."}</div>
       <Button
         onClick={() => {
-          setName("Jelena");
+          setName("Marija");
         }}
       >
         Change name
@@ -98,7 +98,7 @@ const Practice = () => {
       </div>
       <Button
         onClick={() => {
-          setHomeNumber(50);
+          setHomeNumber(44);
         }}
       >
         Change number
@@ -134,7 +134,11 @@ const Practice = () => {
       <h1>Objekt</h1>
       <div>
         {profile.profilePicture ? (
-          <img src={profile.profilePicture} width={50} alt="Profile Picture" />
+          <img
+            className="img"
+            src={profile.profilePicture}
+            alt="Profile Picture"
+          />
         ) : undefined}
         <div>
           {profile.name}&nbsp;{profile.lastName}, {profile.age}
@@ -166,7 +170,21 @@ const Practice = () => {
 
       {/* Boolean */}
       <h1>Boolean</h1>
-      <div>{wc ? "ima ga" : "nema ga"}</div>
+      <div>
+        {wc ? (
+          <img
+            className="img"
+            src="https://media.istockphoto.com/id/1749791288/photo/public-bio-toilet-under-red-rock-in-desert.jpg?s=612x612&w=0&k=20&c=YRA7ZEo3zTfO7N-g_IT1cYBx9cBG_oa7OwITivMqgVI="
+            alt=""
+          />
+        ) : (
+          <img
+            className="img"
+            src="https://www.aopa.org/-/media/Images/AOPA-Main/News-and-Media/2017/October/Sedona-Arizona/1005_Sedona1.jpg?mw=1200&mh=675&as=1&hash=16E9AF04A4B0FBD9ABA814BAAFA08486"
+            alt=""
+          />
+        )}
+      </div>
       <Button
         onClick={() => {
           setWc(!wc);
