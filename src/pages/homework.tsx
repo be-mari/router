@@ -1,4 +1,5 @@
 import { useState } from "react";
+import Button from "../components/button";
 
 const Homework = () => {
   // String
@@ -42,8 +43,11 @@ const Homework = () => {
 
   ///// Number Array Function
   const addItemToNumArr = () => {
-    setMyNumberArr([...myNumberArr, inputValue]);
-    setInputValue("");
+    const numericValue = parseInt(inputValue, 10);
+    if (!isNaN(numericValue)) {
+      setMyNumberArr([...myNumberArr, numericValue]);
+      setInputValue("");
+    }
   };
   const removeItemFromNumArr = () => {
     if (myNumberArr.length > 0) {
@@ -72,104 +76,107 @@ const Homework = () => {
   };
 
   return (
-    <>
+    <div className="homework">
       {/* String */}
-      <div className="hw__string">
-        <h2>String:</h2>
-        <p style={{ fontSize: "1.5rem", textAlign: "center" }}>
-          This is {myString}
-        </p>
-        <button
-          onClick={() => {
-            setMyString("Torture 🤣");
-          }}
-        >
-          Homework
-        </button>
-      </div>
+
+      <h2>String:</h2>
+      <p style={{ fontSize: "1.5rem", textAlign: "center" }}>
+        This is {myString}
+      </p>
+      <Button
+        onClick={() => {
+          setMyString("Torture 🤣");
+        }}
+      >
+        Homework
+      </Button>
+
       <hr />
 
       {/* String Array */}
-      <div className="hw__stringArr">
-        <h2>String Array:</h2>
-        <ul>
-          {myStringArray.map((item, index) => (
-            <li key={index}>{item}</li>
-          ))}
-        </ul>
-        <input
-          type="text"
-          value={inputValue}
-          onChange={(e) => setInputValue(e.target.value)}
-        />
-        <button onClick={addItemToStringArray}>Add Item</button>
-        <button onClick={removeItemFromStringArray}>Remove Last Item</button>
+
+      <h2>String Array:</h2>
+      <ul className="no-bullets">
+        {myStringArray.map((item, index) => (
+          <li key={index}>{item}</li>
+        ))}
+      </ul>
+      <input
+        className="input"
+        type="text"
+        value={inputValue}
+        onChange={(e) => setInputValue(e.target.value)}
+      />
+      <div>
+        <Button onClick={addItemToStringArray}>Add Item</Button>
+        <Button onClick={removeItemFromStringArray}>Remove Last Item</Button>
       </div>
+
       <hr />
 
       {/* Number */}
-      <div className="hw__number">
-        <h2>Number:</h2>
-        <input
-          className="hw__inpt"
-          type="text"
-          placeholder="Type current price"
-          value={myNumber}
-          onChange={(e) => setMyNumber(Number(e.target.value))}
-        />
 
-        <button
-          onClick={() => {
-            const newPrice =
-              Number(myNumber || 0) - Number(myNumber || 0) * 0.25;
-            setMyNumber(newPrice);
-          }}
-        >
-          Price with 25% discount
-        </button>
-      </div>
+      <h2>Number:</h2>
+      <input
+        className="input"
+        type="text"
+        placeholder="Type current price"
+        value={myNumber}
+        onChange={(e) => setMyNumber(Number(e.target.value))}
+      />
+      <Button
+        onClick={() => {
+          const newPrice = Number(myNumber || 0) - Number(myNumber || 0) * 0.25;
+          setMyNumber(newPrice);
+        }}
+      >
+        Price with 25% discount
+      </Button>
+
       <hr />
 
       {/* Number Array */}
-      <div className="hw__numberArr">
-        <h2>Number Array:</h2>
-        <ul>
-          {myNumberArr.map((item, index) => (
-            <li key={index}>{item}</li>
-          ))}
-        </ul>
-        <input
-          type="number"
-          value={inputValue}
-          onChange={(e) => setInputValue(e.target.value)}
-        />
-        <button onClick={addItemToNumArr}>Add Item</button>
-        <button onClick={removeItemFromNumArr}>Remove Last Item</button>
+
+      <h2>Number Array:</h2>
+      <ul className="no-bullets">
+        {myNumberArr.map((item, index) => (
+          <li key={index}>{item}</li>
+        ))}
+      </ul>
+      <input
+        className="input"
+        type="number"
+        value={inputValue}
+        onChange={(e) => setInputValue(e.target.value)}
+      />
+      <div>
+        <Button onClick={addItemToNumArr}>Add Item</Button>
+        <Button onClick={removeItemFromNumArr}>Remove Last Item</Button>
       </div>
+
       <hr />
 
       {/* Boolean */}
-      <div className="hw__boolean">
-        <h2>Boolean</h2>
-        <p>Please select correct answers.</p>
-        <div className="hw__boolean__quiz">
-          This is super simple. <br /> {myBoolean ? "true" : "false"} <br />{" "}
-          <button onClick={handleBooleanValue}>Is it true?</button>
-        </div>
-      </div>
+
+      <h2>Boolean</h2>
+      <p>Please select correct answers.</p>
+      <div className="boolean__q">This is super simple.</div>
+      <div className="boolean__a">{myBoolean ? "true" : "false"}</div>
+      <Button onClick={handleBooleanValue}>Is it true?</Button>
+      <hr />
 
       {/* Boolean Array*/}
-      <div className="hw__booleanArr">
-        <h2>Boolean Array:</h2>
-        <ul>
-          {booleanArray.map((item, index) => (
-            <li key={index}>{item.toString()}</li>
-          ))}
-        </ul>
-        <button onClick={addItemToBooleanArray}>Add Item</button>
-        <button onClick={removeItemFromBooleanArray}>Remove Last Item</button>
-      </div>
-    </>
+
+      <h2>Boolean Array:</h2>
+      <ul className="no-bullets">
+        {booleanArray.map((item, index) => (
+          <li key={index}>{item.toString()}</li>
+        ))}
+      </ul>
+      <Button onClick={addItemToBooleanArray}>Add Item</Button>
+      <Button onClick={removeItemFromBooleanArray}>Remove Last Item</Button>
+      <hr />
+    </div>
   );
 };
 export default Homework;

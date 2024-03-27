@@ -7,7 +7,7 @@ const Vjezbe = () => {
       <div>
         {vjezbeLinks.map((link) => {
           return (
-            <a className="link" key={link.href} href={link.href}>
+            <a className="link link--header" key={link.href} href={link.href}>
               {link.label}
             </a>
           );

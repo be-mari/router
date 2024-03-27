@@ -1,0 +1,10 @@
+.link {
+  &--header {
+    display: flex;
+    flex-direction: column;
+    text-decoration: none;
+    font-weight: 700;
+    padding: var(--padding-sm);
+    color: var(--color-gray-700);
+  }
+}

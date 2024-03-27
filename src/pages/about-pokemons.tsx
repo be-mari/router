@@ -1,6 +1,7 @@
 import { useState, useEffect } from "react";
 import { Outlet } from "react-router-dom";
 import Select from "react-select";
+import Button from "../components/button";
 
 type PokemonsResponseType = {
   count: number;
@@ -35,7 +36,7 @@ const options: OptionType[] = [
 
 const defaultLimit = "10";
 
-const About = () => {
+const AboutPokemons = () => {
   const [data, setData] = useState<PokemonType[]>([]);
   const [limit, setLimit] = useState<string | undefined>("10");
   const [activePokemon, setActivePokemon] = useState<
@@ -76,7 +77,7 @@ const About = () => {
 
   return (
     <>
-      <div>I'm About</div>
+      <div>AboutPokemons</div>
 
       <div>
         <h1>Pokemon</h1>
@@ -90,7 +91,7 @@ const About = () => {
         <div>
           {data.map((pokemon) => {
             return (
-              <button
+              <Button
                 onClick={(e) => {
                   const test = e.target as HTMLButtonElement;
                   getPokemonData(test.innerHTML);
@@ -98,7 +99,7 @@ const About = () => {
                 key={pokemon.name}
               >
                 {pokemon.name}
-              </button>
+              </Button>
             );
           })}
         </div>
@@ -110,4 +111,4 @@ const About = () => {
     </>
   );
 };
-export default About;
+export default AboutPokemons;

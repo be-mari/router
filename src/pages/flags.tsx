@@ -35,6 +35,7 @@ const Flags = () => {
       <div className="container flags">
         <div>
           <input
+            className="input"
             type="text"
             value={countryName}
             onChange={(e) => {

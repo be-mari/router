@@ -1,30 +1,24 @@
-export const vjezbeLinks = [
+import { LinkType } from "../types/main";
+
+export const vjezbeLinks: LinkType[] = [
   {
-    label: "About vjezba",
-    href: "/about",
+    label: "AboutPokemons",
+    href: "/about-pokemons",
   },
   {
-    label: "Country vjezba",
-    href: "/country",
-  },
-  {
-    label: "Flags vjezba",
-    href: "/flags",
-  },
-  {
-    label: "Homework vjezba",
-    href: "/homework",
-  },
-  {
-    label: "Mewtwo vjezba",
+    label: "Mewtwo",
     href: "/mewtwo",
   },
   {
-    label: "Profile vjezba",
-    href: "/profile",
+    label: "Flags",
+    href: "/flags",
   },
   {
-    label: "DatyTypes vjezba",
-    href: "/data-types",
+    label: "Croatia",
+    href: "/croatia",
+  },
+  {
+    label: "Profile",
+    href: "/profile",
   },
 ];

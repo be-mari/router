@@ -3,12 +3,23 @@
   --border-rounded: 0.5rem;
   --border-circle: 1000rem;
 
+  //padding
+  --padding-sm: 0.5rem;
+  --padding-md: 1rem;
+  --padding-lg: 2rem;
+
+  //margin
+  --margin-sm: 0.5rem;
+  --margin-md: 1rem;
+  --margin-lg: 2rem;
+
   //colors
   --color-white: #fff;
   --color-gray-100: #ecf0f1;
   --color-gray-200: #bdc3c7;
   --color-gray-300: #95a5a6;
   --color-gray-400: #7f8c8d;
+  --color-gray-700: #5a5f60;
   --color-black: #222;
   --color-blue-100: #d6dff0;
   --color-blue-400: #5172b1;
@@ -28,11 +39,16 @@
 body {
   margin: 0;
 }
+@import "./components/button.scss";
+@import "./components/container.scss";
 @import "./components/grid.scss";
 @import "./components/header.scss";
+@import "./components/input.scss";
 @import "./components/layout.scss";
 @import "./components/nav.scss";
-@import "./pages/country.scss";
+@import "./pages/croatia.scss";
 @import "./pages/flags.scss";
-@import "./pages/profile.scss";
 @import "./pages/homework.scss";
+@import "./pages/mewtwo.scss";
+@import "./pages/profile.scss";
+@import "./pages/data.scss";
