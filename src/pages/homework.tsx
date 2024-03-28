@@ -1,68 +1,53 @@
 import { useState } from "react";
 import Button from "../components/button";
 
+type EmployeeType = {
+  name: string;
+  lastName: string;
+  experience: number;
+  drivingLicence: boolean;
+};
+
+const defaultEmployee = {
+  name: "Ivana",
+  lastName: "Horvat",
+  experience: 10,
+  drivingLicence: true,
+};
+
 const Homework = () => {
-  // String
+  //String
   const [myString, setMyString] = useState<string>("Homework");
 
-  /// String Array
-  const [myStringArray, setMyStringArray] = useState<string[]>([
+  //String Array
+  const [shoppingItems, setShoppingItems] = useState<string[]>([
     "Chocolate",
     "Gin",
   ]);
   const [inputValue, setInputValue] = useState<string>("");
 
-  //// Number
+  //Number
   const [myNumber, setMyNumber] = useState<number>(0);
 
-  ///// Number Array
+  //Number Array
   const [myNumberArr, setMyNumberArr] = useState<number[]>([1, 2, 3]);
 
-  ////// Boolean
+  //Object
+  const [employeeName, setEmployeeName] = useState<string>("");
+  const [employeeData, setEmployeeData] =
+    useState<EmployeeType>(defaultEmployee);
+
+  //Boolean
   const [myBoolean, setMyBoolean] = useState<boolean>(true);
 
-  /////// Boolean Array
+  // Boolean Array
   const [booleanArray, setBooleanArray] = useState<boolean[]>([
     true,
     false,
     true,
   ]);
 
-  /// String Array Function
-  const addItemToStringArray = () => {
-    setMyStringArray([...myStringArray, inputValue]);
-    setInputValue("");
-  };
-  const removeItemFromStringArray = () => {
-    if (myStringArray.length > 0) {
-      const newArray = [...myStringArray];
-      newArray.pop();
-      setMyStringArray(newArray);
-    }
-  };
-
-  ///// Number Array Function
-  const addItemToNumArr = () => {
-    const numericValue = parseInt(inputValue, 10);
-    if (!isNaN(numericValue)) {
-      setMyNumberArr([...myNumberArr, numericValue]);
-      setInputValue("");
-    }
-  };
-  const removeItemFromNumArr = () => {
-    if (myNumberArr.length > 0) {
-      const newNumArray = [...myNumberArr];
-      newNumArray.pop();
-      setMyNumberArr(newNumArray);
-    }
-  };
-
-  ////// Boolean Function
-  const handleBooleanValue = () => {
-    setMyBoolean((prevValue) => !prevValue);
-  };
-
-  /////// Boolean Array Function
+  /// Boolean Array Function
   const addItemToBooleanArray = () => {
     setBooleanArray([...booleanArray, true]);
   };
@@ -78,7 +63,6 @@ const Homework = () => {
   return (
     <div className="homework">
       {/* String */}
-
       <h2>String:</h2>
       <p style={{ fontSize: "1.5rem", textAlign: "center" }}>
         This is {myString}
@@ -97,7 +81,7 @@ const Homework = () => {
 
       <h2>String Array:</h2>
       <ul className="no-bullets">
-        {myStringArray.map((item, index) => (
+        {shoppingItems.map((item, index) => (
           <li key={index}>{item}</li>
         ))}
       </ul>
@@ -108,8 +92,25 @@ const Homework = () => {
         onChange={(e) => setInputValue(e.target.value)}
       />
       <div>
-        <Button onClick={addItemToStringArray}>Add Item</Button>
-        <Button onClick={removeItemFromStringArray}>Remove Last Item</Button>
+        <Button
+          onClick={() => {
+            setShoppingItems([...shoppingItems, inputValue]);
+            setInputValue("");
+          }}
+        >
+          Add Item
+        </Button>
+        <Button
+          onClick={() => {
+            if (shoppingItems.length > 0) {
+              const newArray = [...shoppingItems];
+              newArray.pop();
+              setShoppingItems(newArray);
+            }
+          }}
+        >
+          Remove Last Item
+        </Button>
       </div>
 
       <hr />
@@ -150,19 +151,72 @@ const Homework = () => {
         onChange={(e) => setInputValue(e.target.value)}
       />
       <div>
-        <Button onClick={addItemToNumArr}>Add Item</Button>
-        <Button onClick={removeItemFromNumArr}>Remove Last Item</Button>
+        <Button
+          onClick={() => {
+            const numericValue = parseInt(inputValue, 10);
+            if (!isNaN(numericValue)) {
+              setMyNumberArr([...myNumberArr, numericValue]);
+              setInputValue("");
+            }
+          }}
+        >
+          Add Item
+        </Button>
+        <Button
+          onClick={() => {
+            if (myNumberArr.length > 0) {
+              const newNumArray = [...myNumberArr];
+              newNumArray.pop();
+              setMyNumberArr(newNumArray);
+            }
+          }}
+        >
+          Remove Last Item
+        </Button>
       </div>
 
       <hr />
 
-      {/* Boolean */}
+      {/* Object */}
+      <h2>Object</h2>
+      <input
+        type="text"
+        placeholder="Employee's name, e.g. Ivana"
+        value={employeeName}
+        onChange={(e) => setEmployeeName(e.target.value)}
+      />
+      <Button
+        onClick={() => {
+          // You need to implement logic to fetch employee data based on the name
+          // For now, setting defaultEmployee if no matching employee is found
+          const foundEmployee = null; // Replace null with your logic
+          setEmployeeData(foundEmployee || defaultEmployee);
+        }}
+      >
+        Display employee's data
+      </Button>
+      {employeeData && (
+        <div>
+          <p>Name: {employeeData.name}</p>
+          <p>Last Name: {employeeData.lastName}</p>
+          <p>Experience: {employeeData.experience} years</p>
+          <p>Driving Licence: {employeeData.drivingLicence ? "🚗" : "🚫"}</p>
+        </div>
+      )}
+      <hr />
 
+      {/* Boolean */}
       <h2>Boolean</h2>
       <p>Please select correct answers.</p>
       <div className="boolean__q">This is super simple.</div>
       <div className="boolean__a">{myBoolean ? "true" : "false"}</div>
-      <Button onClick={handleBooleanValue}>Is it true?</Button>
+      <Button
+        onClick={() => {
+          setMyBoolean((prevValue) => !prevValue);
+        }}
+      >
+        Is it true?
+      </Button>
       <hr />
 
       {/* Boolean Array*/}
