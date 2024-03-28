@@ -11,6 +11,7 @@ import Croatia from "./pages/croatia";
 import Profile from "./pages/profile";
 import NoMatch from "./pages/no-match";
 import DataTypes from "./pages/data-types";
+import Gallery from "./pages/gallery";
 
 const App = () => {
   return (
@@ -20,6 +21,7 @@ const App = () => {
           <Route index element={<Home />} />
           <Route path="data-types" element={<DataTypes />} />
           <Route path="vjezbe" element={<Vjezbe />} />
+          <Route path="gallery" element={<Gallery />} />
           <Route path="practice" element={<Practice />} />
           <Route path="homework" element={<Homework />} />
           <Route path="about-pokemons" element={<AboutPokemons />}>
