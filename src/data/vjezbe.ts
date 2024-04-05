@@ -25,4 +25,8 @@ export const vjezbeLinks: LinkType[] = [
     label: "Gallery",
     href: "/gallery",
   },
+  {
+    label: "My profile",
+    href: "/my-profile",
+  },
 ];

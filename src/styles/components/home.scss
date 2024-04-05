@@ -1,0 +1,31 @@
+.home {
+  border-radius: var(--border-rounded);
+  box-shadow: 0 10px 10px var(--color-gray-300);
+
+  &__top {
+    background-image: url(https://img.freepik.com/free-photo/tranquil-bay-with-azure-waters-palmfringed-sands-is-hidden-by-green-hills_91128-4707.jpg?w=996);
+    background-repeat: no-repeat;
+    height: 15rem;
+    background-position: 50%;
+    background-size: cover;
+  }
+  &__header {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    &__avatar {
+      object-fit: cover;
+      border-radius: var(--border-circle);
+      height: 10rem;
+      width: 10rem;
+      padding: 0.3rem;
+      background-color: var(--color-blue-500);
+      cursor: pointer;
+      margin-top: -5rem;
+    }
+    &__info {
+      display: flex;
+      flex-direction: column;
+    }
+  }
+}

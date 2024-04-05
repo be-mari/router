@@ -1,15 +1,12 @@
 import IconAdd from "../assets/add";
 import IconDots from "../assets/dots";
-import profileImageUrl from "../assets/profile-img.jpg";
-import Button from "../components/button-home";
+import Button from "../components/button";
 import Tag from "../components/tag";
-import croatiaFlagUrl from "../assets/croatia.png";
-import IconArrowTopRight from "../assets/arrow-top-right";
 
 type ProfileDataType = {
   firstName: string;
   lastName: string;
-  profileDescription: string;
+  about: string;
   skills: string[];
   country: string;
   city: string;
@@ -26,10 +23,10 @@ const data: ProfileDataType = {
   lastName: "B",
   country: "Croatia",
   city: "Osijek",
-  profileDescription: "Learning frontend development.",
+  about: "Learning frontend development.",
   skills: ["HTML/CSS", "JS/TS", "React"],
-  experience: "Still in process.",
-  aboutMe: "Hopefully, a future frontend developer.",
+  experience: "Loading...",
+  aboutMe: "Something about me.",
   links: {
     W3: "https://www.w3schools.com/",
     MDN: "https://developer.mozilla.org/en-US/",
@@ -57,80 +54,53 @@ const data: ProfileDataType = {
 const Home = () => {
   return (
     <>
-      <div className="personal">
-        <div className="personal__top"></div>
-        <div className="personal__header">
-          <div className="personal__header__img">
-            <img src={profileImageUrl} alt="profile image" />
-          </div>
-          <div className="personal__header__info">
-            <div className="personal__header__name">
+      <div className="home">
+        <div className="home__top"></div>
+        <div className="home__header">
+          <img
+            className="home__header__avatar"
+            src={"src/assets/profile-img.jpg"}
+            alt="Cover photo"
+          />
+
+          <div className="home__header__info">
+            <div className="home__header__name ">
               {data.firstName} {data.lastName}
             </div>
-            <div className="personal__header__description">
-              {data.profileDescription}
-            </div>
+            <div className="home__header__about ">{data.about}</div>
           </div>
-          <div className="personal__header__actions">
-            <Button color="blue">
-              <IconDots />
-            </Button>
-            <Button color="blue">Hire me</Button>
-            <Button color="blue" leftElement={<IconAdd />}>
-              Folow
-            </Button>
+
+          <div className="home__header__buttons">
+            <button className="btn">...</button>
+            <button className="btn">Hire me</button>
+            <button className="btn">+ Folow</button>
           </div>
         </div>
-        <div className="personal__body">
-          <div className="personal__body__pannel personal__body__main">
-            <h2 className="personal__body__title">Experience</h2>
-            <p className="personal__body__p mb-8">{data.experience}</p>
-            <h2 className="personal__body__title">About me</h2>
-            <p className="personal__body__p mb-8">{data.aboutMe}</p>
+
+        <div className="home__body">
+          <div className="home__body__left">
+            <h3>Experience</h3>
+            {data.experience}
+            <h3>About me</h3>
+            {data.aboutMe}
           </div>
-          <div className="personal__body__pannel personal__body__side">
-            <h3 className="personal__body__subtitle mb-2">Skills</h3>
-            <div className="mb-8 tag__wrapper tag__wrapper--left">
+          <div className="home__body__right">
+            <h4>Skills</h4>
+            <div className="tag__wrapper">
               {data.skills.map((skill) => {
-                return (
-                  <Tag key={skill} size="sm">
-                    {skill}
-                  </Tag>
-                );
+                return <Tag>{skill}</Tag>;
               })}
             </div>
-            <h3 className="personal__body__subtitle mb-2">Location</h3>
-            <div className="flex flex--ac mb-8">
-              <img
-                width={24}
-                className="display--block mr-2"
-                src={croatiaFlagUrl}
-                alt="Flag of Croatia"
-              />
-              <span>
-                {data.city}, {data.country}
-              </span>
+
+            <h4>Location</h4>
+            <div className="location__wrapper">
+              <img width={20} src="src/assets/croatia.png" alt="" />
+              <span>{data.city}</span>
+              {data.country}
             </div>
-            <h3 className="personal__body__subtitle mb-2">Links</h3>
-            <div className="mb-8">
-              {Object.keys(data.links).map((key) => {
-                return (
-                  <>
-                    <a
-                      className="link link--icon"
-                      href={data.links[key]}
-                      key={key}
-                      target="_blank"
-                    >
-                      <IconArrowTopRight width={16} />
-                      {key}
-                    </a>
-                  </>
-                );
-              })}
-            </div>
-            <h3 className="personal__body__subtitle mb-2">Email</h3>
-            <div>{data.email}</div>
+
+            <h4>Links</h4>
+            <div>{Object.keys(data)}</div>
           </div>
         </div>
       </div>
