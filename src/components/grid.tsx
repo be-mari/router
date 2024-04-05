@@ -5,7 +5,7 @@ type Props = {
   children: ReactNode;
 };
 
-const Grid = ({ children, columns = 2 }: Props) => {
+const Grid = ({ children, columns = 4 }: Props) => {
   return (
     <>
       <div

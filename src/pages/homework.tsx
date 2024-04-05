@@ -18,7 +18,15 @@ const defaultEmployee = {
 const Homework = () => {
   //String
   const [myString, setMyString] = useState<string>("Homework");
+  const [isMouseOver, setMouseOver] = useState(false);
 
+  const handleMouseOver = () => {
+    setMouseOver(true);
+  };
+
+  const handleMouseOut = () => {
+    setMouseOver(false);
+  };
   //String Array
   const [shoppingItems, setShoppingItems] = useState<string[]>([
     "Chocolate",
@@ -67,13 +75,20 @@ const Homework = () => {
       <p style={{ fontSize: "1.5rem", textAlign: "center" }}>
         This is {myString}
       </p>
-      <Button
+      <button
+        className="btn"
+        style={{
+          backgroundColor: isMouseOver ? "black" : "",
+          color: isMouseOver ? "white" : "",
+        }}
+        onMouseOver={handleMouseOver}
+        onMouseOut={handleMouseOut}
         onClick={() => {
           setMyString("Torture 🤣");
         }}
       >
         Homework
-      </Button>
+      </button>
 
       <hr />
 

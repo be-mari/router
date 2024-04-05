@@ -7,3 +7,35 @@
   cursor: pointer;
   margin: 0.1rem;
 }
+.button {
+  border: none;
+  border-radius: var(--border-rounded);
+  padding: 0.5rem 2rem;
+  background-color: var(--color-gray-400);
+  color: var(--color-white);
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  transition: all 250ms ease-in-out;
+  cursor: pointer;
+  //sizes
+  &--md {
+    padding: 0.5rem 2rem;
+  }
+  &--lg {
+    padding: 1rem 3rem;
+  }
+  //colors
+  &--purple {
+    background-color: var(--color-green-400);
+    &:hover {
+      background-color: var(--color-green-500);
+    }
+  }
+  &--blue {
+    background-color: var(--color-blue-400);
+    &:hover {
+      background-color: var(--color-blue-500);
+    }
+  }
+}

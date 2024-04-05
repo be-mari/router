@@ -1,4 +1,6 @@
 import { ButtonHTMLAttributes } from "react";
+type ButtonSizeType = "md" | "lg";
+type ButtonColorType = "blue" | "purple";
 
 type Props = {} & ButtonHTMLAttributes<HTMLButtonElement>;
 

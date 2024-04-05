@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react";
+import Tag from "../components/tag";
 
 type CountryType = {
   flags: {
@@ -12,6 +13,7 @@ const defaultFlagUrl =
 const Flags = () => {
   const [countryName, setCountryName] = useState<string>("");
   const [country, setCountry] = useState<CountryType | undefined>(undefined);
+  const [buttonClicked, setButtonClicked] = useState<boolean>(false);
 
   const getData = async (countryName: string) => {
     await fetch(`https://restcountries.com/v3.1/name/${countryName}`)
@@ -27,12 +29,16 @@ const Flags = () => {
   };
 
   useEffect(() => {
-    getData(countryName);
-  }, [countryName]);
+    if (buttonClicked) {
+      getData(countryName);
+    }
+  }, [buttonClicked]);
 
   return (
     <>
       <div className="container flags">
+        {buttonClicked && <Tag>Hello {countryName}</Tag>}
+
         <div>
           <input
             className="input"
@@ -46,7 +52,7 @@ const Flags = () => {
           <button
             className="btn"
             onClick={() => {
-              getData(countryName);
+              setButtonClicked(true);
             }}
           >
             Get the flag

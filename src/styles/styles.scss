@@ -23,7 +23,9 @@
   --color-black: #222;
   --color-blue-100: #d6dff0;
   --color-blue-400: #5172b1;
+  --color-blue-500: #445f91;
   --color-green-400: #54c183;
+  --color-green-500: #47a16e;
   --color-red-300: #db3f52;
   --color-red-400: #c23d50;
   --color-red-800: #521a22;
@@ -39,17 +41,26 @@
 body {
   margin: 0;
 }
+
 @import "./components/button.scss";
 @import "./components/container.scss";
 @import "./components/gallery.scss";
 @import "./components/grid.scss";
 @import "./components/header.scss";
+@import "./components/icon.scss";
+@import "./components/image.scss";
 @import "./components/input.scss";
 @import "./components/layout.scss";
+@import "./components/link.scss";
 @import "./components/nav.scss";
+@import "./components/personal.scss";
+@import "./components/tag.scss";
 @import "./pages/croatia.scss";
 @import "./pages/flags.scss";
 @import "./pages/homework.scss";
 @import "./pages/mewtwo.scss";
 @import "./pages/profile.scss";
 @import "./pages/data.scss";
+@import "./utils/display.scss";
+@import "./utils/flex.scss";
+@import "./utils/margins.scss";
