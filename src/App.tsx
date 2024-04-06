@@ -12,7 +12,7 @@ import Profile from "./pages/profile";
 import NoMatch from "./pages/no-match";
 import DataTypes from "./pages/data-types";
 import Gallery from "./pages/gallery";
-import MyProfile from "./pages/my-profile";
+import New from "./pages/new";
 
 const App = () => {
   return (
@@ -20,7 +20,7 @@ const App = () => {
       <Routes>
         <Route path="/" element={<Layout />}>
           <Route index element={<Home />} />
-          <Route path="my-profile" element={<MyProfile />} />
+          <Route path="new" element={<New />} />
           <Route path="data-types" element={<DataTypes />} />
           <Route path="vjezbe" element={<Vjezbe />} />
           <Route path="gallery" element={<Gallery />} />
