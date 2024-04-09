@@ -1,0 +1,25 @@
+.tab {
+  display: flex;
+  gap: 1rem;
+  margin-bottom: 1rem;
+
+  &__item {
+    padding: 0.5rem;
+    border-bottom: 1px solid var(--color-gray-200);
+    &.active {
+      border-bottom: 3px solid var(--color-gray-300);
+    }
+  }
+  &__content {
+    padding: 1rem;
+  }
+}
+.cast {
+  display: flex;
+  flex-direction: column;
+}
+.actor {
+  width: 10rem;
+  height: 10rem;
+  border-radius: var(--border-circle);
+}
