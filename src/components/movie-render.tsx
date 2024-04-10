@@ -1,4 +1,4 @@
-import { MovieType } from "../pages/tabs";
+import { MovieType } from "../types/main";
 import Tag from "./tag";
 
 type Props = {
@@ -10,22 +10,33 @@ const MovieRender = ({ movie }: Props) => {
     <>
       {movie ? (
         <>
+          <img width={200} src={movie.imgUrl} alt={movie.name} />
           <h2>{movie.name}</h2>
-          <div>
+          <div className="mb-4">
             <b>{movie.year}</b>
           </div>
-          <img className="img" src={movie.imgUrl} alt="movie cover" />
-          <div className="cast">
-            <img className="actor" src={movie.cast.image} alt="cast" />
-            <div className="cast__data">
-              <h2>{movie.cast.name}</h2>
-              <h2>{movie.cast.role}</h2>
-            </div>
-          </div>
-          <div className="tag__wrapper">
+          <div className="tag__wrapper tag__wrapper--left mb-8">
             {movie.genre.map((genre) => {
               return <Tag key={genre}>{genre}</Tag>;
             })}
+          </div>
+          <div>
+            <h3>Cast</h3>
+            <div className="movie__grid">
+              {movie.cast.map((actor) => {
+                return (
+                  <div className="movie__actor" key={actor.realName}>
+                    <img src={actor.imageUrl} alt={actor.realName} />
+                    <div>
+                      <div>{actor.realName}</div>
+                      <div>
+                        <b>{actor.movieName}</b>
+                      </div>
+                    </div>
+                  </div>
+                );
+              })}
+            </div>
           </div>
         </>
       ) : (
@@ -34,4 +45,5 @@ const MovieRender = ({ movie }: Props) => {
     </>
   );
 };
+
 export default MovieRender;

@@ -12,7 +12,7 @@ import Profile from "./pages/profile";
 import NoMatch from "./pages/no-match";
 import DataTypes from "./pages/data-types";
 import Gallery from "./pages/gallery";
-import Tabs from "./pages/tabs";
+import { Tabs } from "./pages/tabs";
 
 const App = () => {
   return (

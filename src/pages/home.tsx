@@ -30,6 +30,8 @@ const data: ProfileDataType = {
   experience: "Loading...",
   aboutMe: "Something about me.",
   links: {
+    ArrayMethods:
+      "https://dev.to/devsmitra/28-javascript-array-hacks-a-cheat-sheet-for-developer-5769",
     W3: "https://www.w3schools.com/",
     MDN: "https://developer.mozilla.org/en-US/",
     stackOverflow: "https://stackoverflow.com/",
