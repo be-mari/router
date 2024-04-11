@@ -13,6 +13,8 @@ import NoMatch from "./pages/no-match";
 import DataTypes from "./pages/data-types";
 import Gallery from "./pages/gallery";
 import { Tabs } from "./pages/tabs";
+import Games from "./pages/games";
+import GameInfo from "./pages/game-info";
 
 const App = () => {
   return (
@@ -21,6 +23,11 @@ const App = () => {
         <Route path="/" element={<Layout />}>
           <Route index element={<Home />} />
           <Route path="tabs" element={<Tabs />} />
+          <Route path="games">
+            <Route index element={<Games />} />
+            <Route path=":gameId" element={<GameInfo />} />
+          </Route>
+
           <Route path="data-types" element={<DataTypes />} />
           <Route path="vjezbe" element={<Vjezbe />} />
           <Route path="gallery" element={<Gallery />} />
