@@ -31,6 +31,7 @@ const Flags = () => {
   useEffect(() => {
     if (buttonClicked) {
       getData(countryName);
+      setButtonClicked(false);
     }
   }, [buttonClicked]);
 

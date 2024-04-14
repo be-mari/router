@@ -1,8 +1,8 @@
 .games {
   &__grid {
     display: grid;
-    gap: 2rem;
-    grid-template-columns: repeat(1, 2fr);
+    gap: 1rem;
+    grid-template-columns: repeat(3, 1fr);
   }
 
   &__card {
@@ -15,25 +15,21 @@
     display: block;
     width: 100%;
     height: 15rem;
-    object-fit: contain;
+    object-fit: cover;
   }
   &__name {
-    padding: var(--padding-);
+    padding: var(--padding-sm);
+    text-align: center;
   }
 }
 
 .game {
-  &__info {
-    border: 1px solid var(--color-gray-300);
-    padding: var(--padding-sm);
-    margin: auto;
-    width: 50%;
-    box-shadow: 5px 5px 4px var(--color-gray-300);
+  display: flex;
+  &--left {
+    width: 40%;
   }
-  &__img {
-    width: 20rem;
-  }
-  &__text {
-    margin: 0.5rem;
+  &--right {
+    margin-left: var(--margin-md);
+    align-self: center;
   }
 }

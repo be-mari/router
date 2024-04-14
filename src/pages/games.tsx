@@ -6,6 +6,10 @@ export type GameType = {
   name: string;
   platforms: string[];
   genre: string;
+  developer: string;
+  rating: string;
+  onlinePvP: boolean;
+  price: number;
 };
 export const gamesData: GameType[] = [
   {
@@ -23,6 +27,10 @@ export const gamesData: GameType[] = [
       "Xbox Series X i Series S",
       "Microsoft Windows",
     ],
+    developer: "Rockstar Games",
+    rating: "9/10",
+    onlinePvP: true,
+    price: 29,
   },
   {
     id: "Baldurs-Gate-3",
@@ -37,6 +45,10 @@ export const gamesData: GameType[] = [
       "GeForce Now",
       "Mac OS",
     ],
+    developer: "Larian Studios",
+    onlinePvP: false,
+    price: 59,
+    rating: "10/10",
   },
 ];
 

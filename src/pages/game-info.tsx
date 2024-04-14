@@ -5,6 +5,7 @@ import { useEffect, useState } from "react";
 const GameInfo = () => {
   const { gameId } = useParams();
   const [data, setData] = useState<GameType>();
+
   const getGameInfo = () => {
     const game = gamesData.find((game) => {
       return game.id === gameId;
@@ -14,7 +15,8 @@ const GameInfo = () => {
 
   useEffect(() => {
     getGameInfo();
-  }); // dohvaćamo samo prvi puta
+  }, []); // dohvaćamo samo prvi puta
+
   return (
     <>
       {/* // ako ne nađemo podatke u gametype ?
@@ -22,21 +24,29 @@ const GameInfo = () => {
         <img src={data?.imgUrl} alt="" />
         <div>{data?.name}</div>
       </div> */}
+
       {data ? (
         <>
-          <div className="game__info">
-            <img className="game__img" src={data.imgUrl} alt="" />
-            <div>{data.name}</div>
-            <div className="game__text">Genre: {data.genre}</div>
-            <div className="game__text">
-              Platforms: {data.platforms.join(", ")}
+          <div className="game">
+            <img className="game--left" src={data.imgUrl} alt="game cover" />
+            <div className="game--right">
+              <div>{data.name}</div>
+              <div>{data.developer}</div>
+              <div>Online Pvp: {data.onlinePvP ? "yes" : "no"}</div>
+              <div>
+                <b>{data.price}$</b>
+              </div>
+              <div>{data.rating}</div>
+              <div className="game__text">Genre: {data.genre}</div>
+              <div className="game__text">
+                Platforms: {data.platforms.join(", ")}
+              </div>
             </div>
           </div>
         </>
       ) : (
         <div>
-          Igrica s nazivom
-          {gameId} ne postoji u našoj bazi podataka
+          Igrica s nazivom <b>{gameId}</b> ne postoji u našoj bazi podataka 😢
         </div>
       )}
     </>
