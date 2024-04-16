@@ -15,6 +15,7 @@ import Gallery from "./pages/gallery";
 import { Tabs } from "./pages/tabs";
 import Games from "./pages/games";
 import GameInfo from "./pages/game-info";
+import Cars from "./pages/cars";
 
 const App = () => {
   return (
@@ -39,6 +40,7 @@ const App = () => {
           <Route path="mewtwo" element={<Mewtwo />} />
           <Route path="croatia" element={<Croatia />} />
           <Route path="flags" element={<Flags />} />
+          <Route path="cars" element={<Cars />} />
           <Route path="profile" element={<Profile />} />
           {/* Using path="*"" means "match anything", so this route
                 acts like a catch-all for URLs that we don't have explicit
