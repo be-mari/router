@@ -1,33 +1,5 @@
 import { useEffect, useState } from "react";
-type PokemonType = {
-  name: string;
-  height: number;
-  weight: number;
-  order: number;
-  sprites: {
-    front_default: string;
-    front_shiny: string;
-    back_default: string;
-    back_shiny: string;
-  };
-  abilities: PokemonAbilityType[];
-  types: PokemonTypeType[];
-  moves: PokemonMovesType[];
-};
-type PokemonAbilityType = {
-  ability: { name: string };
-};
-type PokemonTypeType = {
-  type: {
-    name: string;
-  };
-};
-type PokemonMovesType = {
-  move: {
-    name: string;
-    url: string;
-  };
-};
+import { PokemonType } from "../types/main";
 
 const Mewtwo = () => {
   const [pokemonData, setPokemonData] = useState<PokemonType | null>(null);

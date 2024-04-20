@@ -1,0 +1,115 @@
+.car {
+  color: var(--color-white);
+  display: flex;
+  justify-content: center;
+  max-width: 70vw;
+  margin: 2rem auto;
+  font-family: "Afacad", sans-serif;
+
+  &__item {
+    max-width: 14rem;
+    &--sedans {
+      border-radius: var(--border-rounded) 0 0 var(--border-rounded);
+      background-color: var(--color-orange-400);
+      padding: var(--padding-xlg);
+    }
+    &--suvs {
+      background-color: var(--color-turquoise-400);
+      padding: var(--padding-xlg);
+    }
+    &--luxury {
+      border-radius: 0 var(--border-rounded) var(--border-rounded) 0;
+      background-color: var(--color-turquoise-700);
+      padding: var(--padding-xlg);
+    }
+  }
+
+  &__icon {
+    position: absolute;
+    width: 2rem;
+    z-index: 3;
+  }
+
+  &__circle {
+    width: 2rem;
+    height: 2rem;
+    border-radius: var(--border-circle);
+    position: relative;
+    right: 1rem;
+    &--sedans {
+      background-color: var(--color-orange-500);
+    }
+    &--suvs {
+      background-color: var(--color-turquoise-500);
+    }
+    &--luxury {
+      background-color: var(--color-turquoise-800);
+    }
+  }
+
+  &__title {
+    text-transform: uppercase;
+  }
+
+  &__text {
+    max-height: 15rem;
+  }
+
+  &__btn {
+    border: none;
+    border-radius: var(--border-rounded-md);
+    padding: var(--padding-sm);
+    margin-top: var(--margin-xlg);
+    white-space: nowrap;
+    &:hover {
+      cursor: pointer;
+    }
+    &--sedans {
+      color: var(--color-orange-400);
+    }
+    &--suvs {
+      color: var(--color-turquoise-400);
+    }
+    &--luxury {
+      color: var(--color-turquoise-700);
+    }
+  }
+}
+
+.car-info {
+  width: 60vw;
+  margin: 0 auto;
+  text-align: center;
+
+  &__text {
+    width: 50vw;
+    margin: var(--margin-md) auto;
+    box-shadow: 1px 1px 15px 5px var(--color-gray-100);
+    border-radius: var(--border-rounded-md);
+    padding: var(--padding-sm);
+  }
+
+  &__img {
+    width: 20rem;
+    height: 10rem;
+    object-fit: cover;
+    object-position: left;
+    border-radius: var(--border-circle);
+  }
+  &__versions {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 20rem;
+    margin: var(--margin-md) auto;
+    box-shadow: 1px 1px 15px 5px var(--color-gray-100);
+    border-radius: var(--border-rounded-md);
+    padding: var(--padding-sm);
+    &__text {
+      padding: var(--padding-md);
+    }
+  }
+  &__additional-img {
+    width: 10rem;
+  }
+}

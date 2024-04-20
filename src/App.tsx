@@ -16,6 +16,7 @@ import { Tabs } from "./pages/tabs";
 import Games from "./pages/games";
 import GameInfo from "./pages/game-info";
 import Cars from "./pages/cars";
+import CarInfo from "./pages/car-info";
 
 const App = () => {
   return (
@@ -23,28 +24,32 @@ const App = () => {
       <Routes>
         <Route path="/" element={<Layout />}>
           <Route index element={<Home />} />
+
+          <Route path="data-types" element={<DataTypes />} />
+          <Route path="practice" element={<Practice />} />
+          <Route path="homework" element={<Homework />} />
+
+          <Route path="vjezbe" element={<Vjezbe />} />
+          <Route path="about-pokemons" element={<AboutPokemons />}>
+            <Route path="history" element={"History"} />
+          </Route>
+          <Route path="mewtwo" element={<Mewtwo />} />
+          <Route path="flags" element={<Flags />} />
+          <Route path="croatia" element={<Croatia />} />
+          <Route path="profile" element={<Profile />} />
+          <Route path="gallery" element={<Gallery />} />
           <Route path="tabs" element={<Tabs />} />
+
           <Route path="games">
             <Route index element={<Games />} />
             <Route path=":gameId" element={<GameInfo />} />
           </Route>
 
-          <Route path="data-types" element={<DataTypes />} />
-          <Route path="vjezbe" element={<Vjezbe />} />
-          <Route path="gallery" element={<Gallery />} />
-          <Route path="practice" element={<Practice />} />
-          <Route path="homework" element={<Homework />} />
-          <Route path="about-pokemons" element={<AboutPokemons />}>
-            <Route path="history" element={"History"} />
+          <Route path="cars">
+            <Route index element={<Cars />} />
+            <Route path=":carId" element={<CarInfo />} />
           </Route>
-          <Route path="mewtwo" element={<Mewtwo />} />
-          <Route path="croatia" element={<Croatia />} />
-          <Route path="flags" element={<Flags />} />
-          <Route path="cars" element={<Cars />} />
-          <Route path="profile" element={<Profile />} />
-          {/* Using path="*"" means "match anything", so this route
-                acts like a catch-all for URLs that we don't have explicit
-                routes for. */}
+
           <Route path="*" element={<NoMatch />} />
         </Route>
       </Routes>

@@ -1,45 +1,33 @@
-type CarType = {
-  id: string;
-  icon: string;
-  title: string;
-  text: string;
-};
-
-const data: CarType[] = [
-  {
-    id: "sedans",
-    icon: "git-vjezba/src/assets/car-1.svg",
-    text: "Choose a sedan for its affordability and excellent fuel economy. Ideal for cruising in the city or on your next road trip.",
-    title: "Sedans",
-  },
-  {
-    id: "suvs",
-    icon: "git-vjezba/src/assets/car-2.svg",
-    text: "Take an SUV for its spacious interior, power and versatility. Perfect for your next family vacation and off-road adventures.",
-    title: "Suvs",
-  },
-  {
-    id: "luxury",
-    icon: "git-vjezba/src/assets/car-3.svg",
-    text: "Cruise in the best car brands without thr bloathed prices. Enjoy enhanced comfort of a luxury rental and arrive in style.",
-    title: "Luxury",
-  },
-];
+import { useNavigate } from "react-router-dom";
+import { data } from "../data/car";
 
 const Cars = () => {
+  const navigate = useNavigate();
+  const goTo = (carId: string) => {
+    navigate(carId);
+  };
   return (
     <>
-      {data.map((car, index) => {
-        <div className="container">
-          <div className={`car car--${index + 1}`}>
-            <div className="car__icon">{car.icon}</div>
-            <div className="car__title">{car.title}</div>
-            <h1 className="car__title">{car.title}</h1>
-            <div className="car__text">{car.text}</div>
-            <button className="car__btn">Learn more</button>
-          </div>
-        </div>;
-      })}
+      <div className="car">
+        {data.map((car) => {
+          return (
+            <div className={`car__item car__item--${car.id}`}>
+              <div>
+                <img className="car__icon" src={car.icon} alt={`car icon`} />
+                <div className={`car__circle car__circle--${car.id}`}></div>
+              </div>
+              <h1 className="car__title">{car.title}</h1>
+              <div className="car__text">{car.text}</div>
+              <button
+                className={`car__btn car__btn--${car.id}`}
+                onClick={() => goTo(car.id)}
+              >
+                Learn more
+              </button>
+            </div>
+          );
+        })}
+      </div>
     </>
   );
 };

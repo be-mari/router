@@ -1,42 +1,5 @@
 import { useEffect, useState } from "react";
-
-type CountryType = {
-  name: NameType;
-  flags: flagType;
-  coatOfArms: CoatOfArmsType;
-  continents: string[];
-  unMember: boolean;
-  borders: string[];
-  capital: string;
-  population: number;
-  currencies: CurrenciesType;
-};
-
-type NameType = {
-  common: string;
-  nativeName: NativeNameType;
-  official: string;
-};
-
-type NativeNameType = {
-  hrv: { common: string; official: string };
-};
-
-type flagType = {
-  alt: string;
-  png: string;
-  svg: string;
-};
-
-type CoatOfArmsType = {
-  png: string;
-};
-
-type CurrenciesType = {
-  EUR: EuroType;
-};
-
-type EuroType = { name: string; symbol: string };
+import { CountryType } from "../types/main";
 
 const Country = () => {
   const [countryData, setCountryData] = useState<CountryType>();

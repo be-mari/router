@@ -1,7 +1,8 @@
 import { useState } from "react";
-import { TravelType, travelData } from "../data/travel-data";
+
 import IconDelete from "../assets/icon-delete";
 import IconClose from "../assets/icon-close";
+import { TravelType, travelData } from "../data/travel-data";
 
 const Gallery = () => {
   const [data, setData] = useState<TravelType[]>(travelData);

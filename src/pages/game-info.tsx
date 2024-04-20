@@ -1,6 +1,7 @@
 import { useParams } from "react-router-dom";
-import { GameType, gamesData } from "./games";
 import { useEffect, useState } from "react";
+import { GameType } from "../types/main";
+import { gamesData } from "../data/games";
 
 const GameInfo = () => {
   const { gameId } = useParams();

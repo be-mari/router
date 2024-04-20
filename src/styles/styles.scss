@@ -1,17 +1,20 @@
 :root {
   //border
   --border-rounded: 0.5rem;
+  --border-rounded-md: 1rem;
   --border-circle: 1000rem;
 
   //padding
   --padding-sm: 0.5rem;
   --padding-md: 1rem;
   --padding-lg: 2rem;
+  --padding-xlg: 3rem;
 
   //margin
   --margin-sm: 0.5rem;
   --margin-md: 1rem;
   --margin-lg: 2rem;
+  --margin-xlg: 5rem;
 
   //colors
   --color-white: #fff;
@@ -24,6 +27,10 @@
   --color-blue-100: #d6dff0;
   --color-blue-400: #5172b1;
   --color-blue-500: #445f91;
+  --color-turquoise-400: #016972;
+  --color-turquoise-500: #01545a;
+  --color-turquoise-700: #00403f;
+  --color-turquoise-800: #003532;
   --color-green-400: #54c183;
   --color-green-500: #47a16e;
   --color-red-300: #db3f52;
@@ -31,18 +38,21 @@
   --color-red-800: #521a22;
   --color-yellow-400: #f3ef19;
   --color-orange-300: #e7b128;
+  --color-orange-400: #e28525;
+  --color-orange-500: #b56a1e;
 }
 
 * {
   box-sizing: border-box;
-  font-family: "Lobster Two", sans-serif;
 }
 
 body {
   margin: 0;
+  font-family: "Lobster Two", sans-serif;
 }
 
 @import "./components/button.scss";
+@import "./components/cars.scss";
 @import "./components/container.scss";
 @import "./components/gallery.scss";
 @import "./components/games.scss";

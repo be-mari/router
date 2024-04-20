@@ -2,31 +2,12 @@ import { useState, useEffect } from "react";
 import { Outlet } from "react-router-dom";
 import Select from "react-select";
 import Button from "../components/button";
-
-type PokemonsResponseType = {
-  count: number;
-  next: string;
-  results: PokemonType[];
-};
-
-type PokemonType = {
-  name: string;
-  url: string;
-};
-
-type ActivePokemonType = {
-  sprites: {
-    front_default: string;
-  };
-};
-
-// type ActivePokemonResponseType = ActivePokemonType;
-
-//ItemPerPage
-type OptionType = {
-  value: string;
-  label: string;
-};
+import {
+  ActivePokemonType,
+  OptionType,
+  PokemonType,
+  PokemonsResponseType,
+} from "../types/main";
 
 const options: OptionType[] = [
   { value: "10", label: "10 Pokemona" },

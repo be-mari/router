@@ -1,18 +1,13 @@
 import { useEffect, useState } from "react";
 import Tag from "../components/tag";
-
-type CountryType = {
-  flags: {
-    png: string;
-  };
-};
+import { FlagType } from "../types/main";
 
 const defaultFlagUrl =
   "https://img.freepik.com/premium-photo/world-map-with-all-states-their-flags-3d-render_665346-24147.jpg?w=740";
 
 const Flags = () => {
   const [countryName, setCountryName] = useState<string>("");
-  const [country, setCountry] = useState<CountryType | undefined>(undefined);
+  const [country, setCountry] = useState<FlagType | undefined>(undefined);
   const [buttonClicked, setButtonClicked] = useState<boolean>(false);
 
   const getData = async (countryName: string) => {
@@ -20,7 +15,7 @@ const Flags = () => {
       .then((data) => {
         return data.json();
       })
-      .then((res: CountryType[]) => {
+      .then((res: FlagType[]) => {
         setCountry(res[0]);
       })
       .catch((err) => {

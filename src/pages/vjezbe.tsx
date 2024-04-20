@@ -1,4 +1,4 @@
-import { vjezbeLinks } from "../data/vjezbe";
+import { vjezbeLinks } from "../data/vjezbe-types";
 
 const Vjezbe = () => {
   return (
