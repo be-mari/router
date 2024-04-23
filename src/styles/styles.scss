@@ -27,6 +27,7 @@
   --color-blue-100: #d6dff0;
   --color-blue-400: #5172b1;
   --color-blue-500: #445f91;
+  --color-blue-900: #1a2437;
   --color-turquoise-400: #016972;
   --color-turquoise-500: #01545a;
   --color-turquoise-700: #00403f;
@@ -54,8 +55,10 @@ body {
 @import "./components/button.scss";
 @import "./components/cars.scss";
 @import "./components/container.scss";
+@import "./components/field.scss";
 @import "./components/gallery.scss";
 @import "./components/games.scss";
+@import "./components/glovo.scss";
 @import "./components/grid.scss";
 @import "./components/header.scss";
 @import "./components/home.scss";
@@ -69,6 +72,9 @@ body {
 @import "./components/personal.scss";
 @import "./components/tab.scss";
 @import "./components/tag.scss";
+
+@import "./overrides/react-date-picker.scss";
+@import "./overrides/react-time-picker.scss";
 
 @import "./pages/croatia.scss";
 @import "./pages/data.scss";

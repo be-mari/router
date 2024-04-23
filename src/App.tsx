@@ -17,6 +17,7 @@ import Games from "./pages/games";
 import GameInfo from "./pages/game-info";
 import Cars from "./pages/cars";
 import CarInfo from "./pages/car-info";
+import Glovo from "./pages/glovo";
 
 const App = () => {
   return (
@@ -49,6 +50,8 @@ const App = () => {
             <Route index element={<Cars />} />
             <Route path=":carId" element={<CarInfo />} />
           </Route>
+
+          <Route path="glovo" element={<Glovo />} />
 
           <Route path="*" element={<NoMatch />} />
         </Route>

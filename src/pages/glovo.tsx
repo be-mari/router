@@ -86,6 +86,7 @@ const Glovo = () => {
             type="number"
           />
         </div>
+
         <h3>Podatci za dostavu</h3>
         <div className="field field--food">
           <label className="field__label" htmlFor="fullName">
