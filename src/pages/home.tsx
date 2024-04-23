@@ -53,6 +53,8 @@ const data: ProfileDataType = {
     diagrams: "https://www.drawio.com/",
     arrayMethods:
       "https://dev.to/devsmitra/28-javascript-array-hacks-a-cheat-sheet-for-developer-5769",
+    reactDatePicker: "https://www.npmjs.com/package/react-date-picker",
+    reactTimePicker: "https://projects.wojtekmaj.pl/react-time-picker/",
   },
   email: "name@sth.com",
 };
