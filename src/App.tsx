@@ -18,7 +18,7 @@ import GameInfo from "./pages/game-info";
 import Cars from "./pages/cars";
 import CarInfo from "./pages/car-info";
 import Glovo from "./pages/glovo";
-import Zadaci from "./components/zadaci";
+import Zadaci from "./pages/zadaci";
 
 const App = () => {
   return (
