@@ -19,6 +19,8 @@ import Cars from "./pages/cars";
 import CarInfo from "./pages/car-info";
 import Glovo from "./pages/glovo";
 import Zadaci from "./pages/zadaci";
+import Phones from "./pages/phones";
+import PhonesCreate from "./pages/phones-create";
 
 const App = () => {
   return (
@@ -55,6 +57,11 @@ const App = () => {
           <Route path="glovo" element={<Glovo />} />
 
           <Route path="zadaci" element={<Zadaci />} />
+
+          <Route path="phones">
+            <Route index element={<Phones />} />
+            <Route path="new" element={<PhonesCreate />} />
+          </Route>
 
           <Route path="*" element={<NoMatch />} />
         </Route>

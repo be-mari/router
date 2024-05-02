@@ -45,4 +45,8 @@ export const vjezbeLinks: LinkType[] = [
     label: "Zadaci",
     href: "/zadaci",
   },
+  {
+    label: "Phones",
+    href: "/phones",
+  },
 ];
